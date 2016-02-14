@@ -85,11 +85,9 @@
 						
 						 
 							<configuration>
-								<!-- /src/docker/dockerfileTemplate -->
-								<file>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/jobs/buildtestMaven/workspace/src/main/docker/dockerfileTemplate</file>
+								<file>/src/main/docker/dockerfileTemplate</file>
 						
-								<!-- /src/docker/dockerfile -->
-								<outputFile>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/jobs/buildtestMaven/workspace/src/main/docker/dockerfile</outputFile>
+								<outputFile>/src/main/docker/dockerfile</outputFile>
 								<replacements>
 										<replacement>
 											<token>@nome_jar@</token>
