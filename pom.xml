@@ -26,6 +26,12 @@
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
 			<url>file:///var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/buildjenkins/mvn-repo</url>
+		
+			<!-- 
+			IN LOCALE
+			<url>file://${project.build.directory}/mvn-repo</url> 
+			-->
+			
 		</repository>
 	</distributionManagement>
 	
@@ -89,7 +95,7 @@
 									
 									<replacement>
 										<token>@version@</token>
-										<value>${project.version}.jar</value>
+										<value>${project.version}</value>
 									</replacement>
 
 								</replacements>                        
@@ -112,6 +118,13 @@
 					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
 					<outputDirectory>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/buildjenkins/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+					<!-- 
+					IN LOCALE
+					<outputDirectory>
+					${project.build.directory}/mvn-repo
+					</outputDirectory>  -->
+					<!-- matches distribution management repository url above -->
+					
 					<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
 					<includes><include>**/*</include></includes>
 					<merge>true</merge>                                        <!-- don't delete old artifacts -->
