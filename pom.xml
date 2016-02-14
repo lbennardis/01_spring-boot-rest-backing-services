@@ -25,7 +25,7 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
-			<url>file://var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/.m2/</url>
+			<url>file:///var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/buildjenkins/mvn-repo</url>
 		</repository>
 	</distributionManagement>
 	
@@ -72,10 +72,10 @@
 				
 					
 
-				<configuration>
+				<configuration> 
 					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-					<outputDirectory>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/.m2/rest-backing-services/rest-backing-services/1.2.1.RELEASE/</outputDirectory> <!-- matches distribution management repository url above -->
+					<outputDirectory>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/buildjenkins/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
 					<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
 					<includes><include>**/*</include></includes>
 					<merge>true</merge>                                        <!-- don't delete old artifacts -->
