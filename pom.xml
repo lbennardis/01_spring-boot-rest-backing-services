@@ -21,7 +21,14 @@
         <github.global.server>github</github.global.server>
     </properties>
 
- 
+ <distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/.m2/</url>
+		</repository>
+	</distributionManagement>
+	
     <dependencies>
         <dependency>
             <groupId>postgresql</groupId>
