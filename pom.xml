@@ -64,11 +64,47 @@
         <finalName>${project.artifactId}</finalName>
 <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
 			<plugins>
+			
+			
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+					<artifactId>maven-replacer-plugin</artifactId>
+					<version>1.4.0</version>
+					<executions>
+						<execution>
+							<phase>process-sources</phase>
+							<goals>
+								<goal>replace</goal>
+							</goals>
+						
+						 
+							<configuration>
+								<file>/src/main/docker/dockerfileTemplate</file>
+								<outputFile>/src/main/docker/dockerfile</outputFile>
+								<replacements>
+									<replacement>
+										<token>@nome_jar@</token>
+										<value>01_spring_boot_rest_bs</value>
+									</replacement>
+									
+									<replacement>
+										<token>@version@</token>
+										<value>${project.version}.jar</value>
+									</replacement>
+
+								</replacements>                        
+							</configuration>
+						</execution>
+  					</executions>
+			</plugin>
+			
+			
+			
 			<plugin>
 			
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
-				<version>0.11</version>
+				<version>0.12</version>
 				
 					
 
@@ -96,6 +132,17 @@
 				</executions>
 								
 			</plugin>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
             </plugins>
             
          </build> 
