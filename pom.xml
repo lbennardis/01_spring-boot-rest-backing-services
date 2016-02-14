@@ -87,7 +87,7 @@
 							<configuration>
 								<file>/src/main/docker/dockerfileTemplate</file>
 						
-								<outputFile>/src/main/docker/dockerfile</outputFile>
+								<outputFile>/src/main/docker/dockerfileapp</outputFile>
 								<replacements>
 										<replacement>
 											<token>@nome_jar@</token>
