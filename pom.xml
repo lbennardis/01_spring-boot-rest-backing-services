@@ -3,8 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>rest-backing-services</groupId>
-    <artifactId>rest-backing-services</artifactId>
+    <artifactId>01_spring_boot_rest_backing_services</artifactId>
    <packaging>jar</packaging>
 
 
@@ -25,10 +24,8 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
-			<url>file://${project.basedir}/mvn-repo</url>
-			<!-- 
+			 
 			<url>file:///var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/buildjenkins/mvn-repo</url>
-			-->
 			
 			<!-- 
 			IN LOCALE {project.basedir}
@@ -90,11 +87,11 @@
 							<configuration>
 								<file>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins/src/main/docker/dockerfileTemplate</file>
 								<!-- wkspace /var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins -->
-								<outputFile>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins/src/main/docker/dockerfile</outputFile>
+								<outputFile>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins/src/main/docker/Dockerfile</outputFile>
 								<replacements>
 										<replacement>
 											<token>@nome_jar@</token>
-											<value>01_spring_boot_rest_bs</value>
+											<value>01_spring_boot_rest_backing_services</value>
 										</replacement>
 										
 										<replacement>
@@ -211,4 +208,5 @@
             
          </build> 
 
+	<groupId>01_spring_boot_rest_backing_services</groupId>
 </project>
