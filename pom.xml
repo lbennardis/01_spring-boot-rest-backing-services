@@ -25,10 +25,13 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
-			<url>file:///var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/buildjenkins/mvn-repo</url>
-		
+			<url>file://${project.basedir}/mvn-repo</url>
 			<!-- 
-			IN LOCALE
+			<url>file:///var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/buildjenkins/mvn-repo</url>
+			-->
+			
+			<!-- 
+			IN LOCALE {project.basedir}
 			<url>file://${project.build.directory}/mvn-repo</url> 
 			-->
 			
@@ -87,7 +90,7 @@
 							<configuration>
 								<file>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins/src/main/docker/dockerfileTemplate</file>
 								<!-- wkspace /var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins -->
-								<outputFile>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins/src/main/docker/dockerfileapp</outputFile>
+								<outputFile>/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins/src/main/docker/dockerfile</outputFile>
 								<replacements>
 										<replacement>
 											<token>@nome_jar@</token>
@@ -104,8 +107,7 @@
 						</execution>
   					</executions>
 			</plugin>
-			
-			
+						
 			
 			<plugin>
 			
@@ -132,7 +134,11 @@
 					<repositoryName>dockerAutomationTest</repositoryName>      <!-- github repo name -->
 					<repositoryOwner>lbennardis</repositoryOwner>              <!-- github username  -->
 					
+					
+					
 				</configuration>
+				
+				
 				
 				<executions>
 				  
@@ -149,6 +155,52 @@
 			
 			
 			
+			
+			<plugin>
+			
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.12</version>
+				
+					
+
+				<configuration> 
+					<message>Upload dockerfile</message>  <!-- git commit message -->
+					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+					<outputDirectory>/
+					/var/lib/openshift/566ae57d0c1e6629760000cd/app-root/data/wkspacejenkins/src/main/docker
+					</outputDirectory> <!-- matches distribution management repository url above -->
+					<!-- 
+					IN LOCALE
+					<outputDirectory>
+					${project.build.directory}/mvn-repo
+					</outputDirectory>  -->
+					<!-- matches distribution management repository url above -->
+					
+					<branch>refs/heads/master</branch>                       <!-- remote branch name -->
+					<includes><include>**/*</include></includes>
+					<merge>true</merge>                                        <!-- don't delete old artifacts -->
+					<repositoryName>dockerAutomationTest</repositoryName>      <!-- github repo name -->
+					<repositoryOwner>lbennardis</repositoryOwner>              <!-- github username  -->
+					
+					
+					
+				</configuration>
+				
+				
+				
+				<executions>
+				  
+				   
+					<execution>
+						<goals>
+						  <goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+								
+			</plugin>
 			
 			
 			
