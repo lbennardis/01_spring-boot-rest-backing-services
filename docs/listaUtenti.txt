@@ -1,0 +1,14 @@
+Clint;Eastwood
+Jack;Nicholson
+AntoniovBanderas
+Anthony;Hopkins
+Brad;Pitt
+Bruce;Willis
+Michael;Caine
+Nicolas;Cage
+Johnny;Depp
+Jude;Law
+Kevin;Costner
+Kevin;Spacey
+Tom;Cruise
+Tom;Hanks
