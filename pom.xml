@@ -124,7 +124,8 @@
 						IN LOCALE
 						<outputDirectory>
 						${project.build.directory}/mvn-repo
-						</outputDirectory>  -->
+						</outputDirectory>  
+						-->
 						<!-- matches distribution management repository url above -->
 						
 						<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
