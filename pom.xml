@@ -3,8 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+	<groupId>01_spring_boot_rest_backing_services</groupId>
     <artifactId>01_spring_boot_rest_backing_services</artifactId>
-   <packaging>jar</packaging>
+   	<packaging>jar</packaging>
 
 
     <parent>
@@ -134,12 +136,10 @@
 					
 					
 				</configuration>
-				
-				
+					
 				
 				<executions>
-				  
-				   
+					   
 					<execution>
 						<goals>
 						  <goal>site</goal>
@@ -149,9 +149,7 @@
 				</executions>
 								
 			</plugin>
-			
-			
-			
+						
 			
 			<plugin>
 			
@@ -179,7 +177,6 @@
 					<repositoryOwner>lbennardis</repositoryOwner>              <!-- github username  -->
 					
 					
-					
 				</configuration>
 				
 				
@@ -191,22 +188,16 @@
 						<goals>
 						  <goal>site</goal>
 						</goals>
-						<phase>deploy</phase>
+						<phase>deploy2</phase>
 					</execution>
 				</executions>
 								
 			</plugin>
 			
-			
-			
-			
-			
-			
-			
-			
+						
             </plugins>
             
          </build> 
 
-	<groupId>01_spring_boot_rest_backing_services</groupId>
+	
 </project>
