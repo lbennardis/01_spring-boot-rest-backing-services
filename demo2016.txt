@@ -189,6 +189,11 @@ C:\development\workspaces\spring-boot-cloud-eureka
 WORKSPACE 01 
 C:\development\workspaces\wks01
 
+PIVOTAL
+l.bennardis@email.it
+2Theknife.
+
+
 
 
 	

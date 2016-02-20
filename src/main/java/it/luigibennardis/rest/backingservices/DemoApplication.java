@@ -39,14 +39,14 @@ public class DemoApplication {
     }
 
     @Bean
-    CommandLineRunner seed(ReservationRepository rr) {
+    CommandLineRunner seed(UtentiRepository rr) {
         return args -> {
 
             rr.deleteAll();
 
             Arrays.asList("Phil,Webb", "Josh,Long", "Dave,Syer", "Spencer,Gibb").stream()
                     .map(s -> s.split(","))
-                    .forEach(namePair -> rr.save(new Reservation(namePair[0], namePair[1])));
+                    .forEach(namePair -> rr.save(new Utenti(namePair[0], namePair[1])));
 
         };
     }
@@ -69,11 +69,11 @@ public class DemoApplication {
 
 
 @RepositoryRestResource
-interface ReservationRepository extends JpaRepository<Reservation, Long> {
+interface UtentiRepository extends JpaRepository<Utenti, Long> {
 }
 
 @Entity
-class Reservation {
+class Utenti {
     @Id
     @GeneratedValue
     private Long id;
@@ -84,10 +84,10 @@ class Reservation {
 
     private String firstName, lastName;
 
-    Reservation() {
+    Utenti() {
     }
 
-    public Reservation(String firstName, String lastName) {
+    public Utenti(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
