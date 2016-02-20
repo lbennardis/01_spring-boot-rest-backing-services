@@ -1,4 +1,4 @@
-https://github.com/spring-cloud-samples/feign-eureka
+﻿https://github.com/spring-cloud-samples/feign-eureka
 
 https://github.com/spring-cloud-samples/eureka
 https://jmnarloch.wordpress.com/2015/08/19/spring-cloud-designing-feign-client/
@@ -182,4 +182,13 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal c
 	
 	
 	
+WORKSPACE EUREKA-REGISTRY-DISCOVERY (02-03-04)
+
+C:\development\workspaces\spring-boot-cloud-eureka
+
+WORKSPACE 01 
+C:\development\workspaces\wks01
+
+
+
 	
