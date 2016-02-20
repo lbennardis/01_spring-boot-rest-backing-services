@@ -26,12 +26,14 @@ public class DemoApplication {
 
     @Bean
     @Profile("cloud")
-    DataSource dataSource(@Value("${cloud.services.myinstance.connection.jdbcurl}") String jdbcUrl) {
+    DataSource dataSource(@Value("${cloud.services.mySqlInstance.connection.jdbcurl}") String jdbcUrl) {
         try {
-            return new SimpleDriverDataSource(
-                org.postgresql.Driver.class.newInstance() , jdbcUrl);
+            return new SimpleDriverDataSource(                
+            		com.mysql.jdbc.Driver.class.newInstance() , jdbcUrl);
         }
+        //org.postgresql.Driver.class.newInstance() , jdbcUrl);
         catch (Exception e) {
+        	
             throw new RuntimeException(e) ;
         }
     }

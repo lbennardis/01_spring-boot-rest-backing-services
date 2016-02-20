@@ -1,13 +1,13 @@
 ---
 applications:
-- name: 01-rest-backing-services
-  memory: 512M
+- name: 01-spring-boot-rest-backing-services
+  memory: 1024M
   instances: 1
-  host: 01-rest-backing-services
+  host: 01-spring-boot-rest-backing-services
   domain: cfapps.io
-  path: target/rest-backing-services.jar
+  path: target/01_spring_boot_rest_backing_services.jar
   services:
-    - myinstance
+    - mySqlInstance
   env:
     SPRING_PROFILES_ACTIVE: cloud
     DEBUG: "true"
