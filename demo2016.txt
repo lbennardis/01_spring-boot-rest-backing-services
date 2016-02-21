@@ -195,5 +195,8 @@ l.bennardis@email.it
 
 
 
+http://www.javacodegeeks.com/2014/10/spring-boot-and-spring-data-rest-exposing-repositories-over-rest.html
+http://www.javabeat.net/spring-data-jpa/
+
 
 	

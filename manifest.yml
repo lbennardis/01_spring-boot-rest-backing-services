@@ -7,7 +7,7 @@ applications:
   domain: cfapps.io
   path: target/01_spring_boot_rest_backing_services.jar
   services:
-    - mySqlInstance
+    - mySqlBackingServices
   env:
     SPRING_PROFILES_ACTIVE: cloud
     DEBUG: "true"
