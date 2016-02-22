@@ -199,4 +199,16 @@ http://www.javacodegeeks.com/2014/10/spring-boot-and-spring-data-rest-exposing-r
 http://www.javabeat.net/spring-data-jpa/
 
 
+
+
+@RestController
+class UserController {
+
+    @RequestMapping("/listaUtenti")
+    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
+        return "Lista utenti";
+    }
+}
+
+
 	

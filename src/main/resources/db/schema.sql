@@ -1,5 +1,7 @@
-CREATE TABLE `utenti` (
-  id               VARCHAR(255) PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL,
-  cognome VARCHAR(255) NOT NULL
-);
+drop table if exists utenti  
+
+create table utenti(
+      id int not null primary key,
+      name varchar(50) not null,
+      author varchar(50) not null,
+      price int);

@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+//import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -77,13 +77,5 @@ public class DemoApplication {
     	}
 }
 
-@RestController
-class UserController {
-
-    @RequestMapping("/listaUtenti")
-    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return "Lista utenti";
-    }
-}
 
 
