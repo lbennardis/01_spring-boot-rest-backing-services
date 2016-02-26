@@ -234,3 +234,9 @@ http://planet.jboss.org/post/9_docker_recipes_for_java_ee_applications_tech_tip_
 http://planet.jboss.org/post/9_docker_recipes_for_java_ee_applications_tech_tip_80
 http://blog.arungupta.me/wildfly-javaee7-mysql-link-two-docker-container-techtip65/
 
+http://planet.jboss.org/post/9_docker_recipes_for_java_ee_applications_tech_tip_80
+
+
+https://www.jiwhiz.com/blogs/Spring_Boot_Docker_MySQL_Demo
+
+https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/#connect-with-the-linking-system

@@ -26,8 +26,6 @@ public class UtentiServiceImplementation implements UtentiRepository{
 
 	
 	
-	
-	
 	@Override
 	public List<Utenti> findAll(Sort sort) {
 		// TODO Auto-generated method stub
