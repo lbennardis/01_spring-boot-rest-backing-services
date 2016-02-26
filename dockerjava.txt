@@ -974,7 +974,7 @@ docker run --name mysqldb -e MYSQL_USER=admin -e MYSQL_PASSWORD=mysql -e MYSQL_D
 
 docker run --name appdemo --link mysqldb:mysql -p 8080:8080 -d springio/pong-matcher-spring
 
-
+docker run --name appdemo --link mysqldb:mysql -p 8080:8080 -t springio/pong-matcher-spring
 
 
 
