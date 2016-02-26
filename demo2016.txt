@@ -218,6 +218,19 @@ class UserController {
 
 DOCKER MYSQL 
  http://txt.fliglio.com/2013/11/creating-a-mysql-docker-container/
+http://blog.arungupta.me/wildfly-javaee7-mysql-link-two-docker-container-techtip65/
 
+https://github.com/arun-gupta/docker-images/tree/master/wildfly-mysql-javaee7
 
+https://www.ctl.io/developers/blog/post/build-a-2-container-app-with-docker/
 	
+
+https://docs.oracle.com/cd/E52668_01/E54669/html/section_rsr_p2z_fp.html
+
+
+http://planet.jboss.org/post/9_docker_recipes_for_java_ee_applications_tech_tip_80
+
+
+http://planet.jboss.org/post/9_docker_recipes_for_java_ee_applications_tech_tip_80
+http://blog.arungupta.me/wildfly-javaee7-mysql-link-two-docker-container-techtip65/
+
