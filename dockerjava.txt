@@ -1001,7 +1001,8 @@ docker run --name appdemo --link mysqldb:mysql -p 8080:8080 -d springio/pong-mat
 
 lat DECIMAL(10, 8) NOT NULL, lng DECIMAL(11, 8) NOT NU
 
-CREATE TABLE `test`.`indirizzi` (
+DROP TABLE indirizzi
+CREATE TABLE `indirizzi` (
   `nome` VARCHAR(45) NOT NULL,
   `indirizzo` VARCHAR(255) NULL,
   `citta` VARCHAR(45) NULL,
@@ -1012,42 +1013,21 @@ CREATE TABLE `test`.`indirizzi` (
 INSERT INTO indirizzi VALUES('Libia','Viale Libia 200','ROMA',41.93236,12.52021);
 INSERT INTO indirizzi VALUES('Nomentana','Via Nomentana 41','ROMA',41.91054,12.50272);
 INSERT INTO indirizzi VALUES('Villini','Via dei Villini 1','ROMA',41.79311,13.21948);
-INSERT INTO indirizzi VALUES('Bologna','Piazza Bologna 5','ROMA',45.44434,9.22379);
+INSERT INTO indirizzi VALUES('Bologna','Piazza Bologna 5','ROMA',41.44434,12.52179);
 INSERT INTO indirizzi VALUES('Fiori','Via Adriano Fiori 16','ROMA',41.93486,12.55199);
 INSERT INTO indirizzi VALUES('Romania','Piazza Romania 1','ROMA',41.92475,12.49285);
 INSERT INTO indirizzi VALUES('Muse','Piazza delle Muse 2','ROMA',41.93032,12.49025);
 INSERT INTO indirizzi VALUES('Parioli','Viale Parioli 140','ROMA',41.92806,12.48661);
 INSERT INTO indirizzi VALUES('Corso Italia','Corso Italia 100','ROMA',41.91018,12.50010);
 INSERT INTO indirizzi VALUES('Prati Fiscali','Via dei Prati Fiscali 150','ROMA',41.94657,12.52057);
-INSERT INTO indirizzi VALUES('Vimercati','Piazza Vimercati 1','ROMA',41.95777,12.52421);
-
-
-
-use test;
-set @orig_lat=41.00000; set @orig_lon=11.0000;set @dist=10;
-SELECT *, 3956 * 2 * 
-ASIN(
-SQRT(
-POWER(
-SIN(
-(@orig_lat - abs(dest.latitudine)) * pi()/180 / 2),2) 
-+ 
-COS(
-@orig_lat * pi()/180 )* 
-COS( 
-abs(dest.latitudine) *  pi()/180) * 
-POWER(SIN((@orig_lon - dest.longitudine)) *  pi()/180 / 2), 2
-)
-)
-as distance FROM indirizzi dest having distance < @dist ORDER BY distance limit 10;
-
-
+INSERT INTO indirizzi VALUES('Vimercati','Piazza Vimercati 1','ROMA',41.95777,12.52421); 
 
 
 
 FUNZIONA
 use test;
-set @orig_lat=41.00000; set @orig_lon=11.0000;set @dist=100;
+
+set @orig_lat=41.93236; set @orig_lon=12.52021;set @dist=10;
 SELECT nome,
 3956 * 2 * (ASIN(
 SQRT(
@@ -1064,6 +1044,30 @@ POWER (SIN((@orig_lon - dest.longitudine)) *  pi()/180/2,2)
 )
 )
 as distance FROM indirizzi dest having distance < @dist ORDER BY distance limit 10;
+
+use test;
+
+set @orig_lat=41.83236; set @orig_lon=12.62021;set @dist=9;
+SELECT nome,
+3956 * 2 * (ASIN(
+SQRT(
+POWER(
+SIN(
+(@orig_lat - abs(dest.latitudine)) * pi()/180/2),2) 
++ 
+COS(
+@orig_lat * pi()/180 )* 
+COS(abs(dest.latitudine) *  pi()/180) 
+*
+POWER (SIN((@orig_lon - dest.longitudine)) *  pi()/180/2,2)
+)
+)
+)
+as distance FROM indirizzi dest having distance < @dist ORDER BY distance limit 10;
+
+
+
+
 
 
 
