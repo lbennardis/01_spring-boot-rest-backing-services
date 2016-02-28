@@ -1043,6 +1043,9 @@ as distance FROM indirizzi dest having distance < @dist ORDER BY distance limit 
 
 
 
+
+
+
 http://fr.scribd.com/doc/2569355/Geo-Distance-Search-with-MySQL
 
 
