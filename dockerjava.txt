@@ -1066,8 +1066,16 @@ POWER (SIN((@orig_lon - dest.longitudine)) *  pi()/180/2,2)
 as distance FROM indirizzi dest having distance < @dist ORDER BY distance limit 10;
 
 
-
-
+		
+		
+		
+SELECT indirizzi.nome,indirizzi.indirizzo,indirizzi.citta,indirizzi.latitudine, 
+		indirizzi.longitudine,3956 * 2 * 
+		(ASIN(SQRT(POWER(SIN(?1 - abs(latitudine)) 
+		* pi()/180/2),2) + COS(?1 * pi()/180 )*COS(abs(latitudine) *  pi()/180) 
+		*POWER (SIN((?2 - longitudine)) *  pi()/180/2,2)))) "
+		as distance FROM indirizzi having distance < ?3 ORDER BY distance limit 10" )
+		
 
 
 
@@ -1076,7 +1084,12 @@ http://fr.scribd.com/doc/2569355/Geo-Distance-Search-with-MySQL
 
 
 
-
+"SELECT indirizzi.nome,indirizzi.indirizzo,indirizzi.citta,indirizzi.latitudine, "
+		+ "indirizzi.longitudine,3956 * 2 * "
+		+ "(ASIN(SQRT(POWER(SIN((?1 - abs(latitudine)) "
+		+ "* pi()/180/2),2) + COS(?1 * pi()/180 )*COS(abs(latitudine) *  pi()/180) "
+		+ "*POWER (SIN((?2 - longitudine)) *  pi()/180/2,2)))) "
+		+ "as distance FROM indirizzi having distance < ?3 ORDER BY distance limit 10;" )
 
 
 
